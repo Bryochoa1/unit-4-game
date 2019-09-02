@@ -15,8 +15,13 @@ var win;
 
 for (let i = 0; i < 4; i++) {
 
+    var random = Math.floor(Math.random()* 12)
     var crystal = $("<div>");
-        crystal.attr("class", 'crystal')
+        crystal.attr({
+            "class": 'crystal',
+            "data-random": random
+        });
+
     $(".crystals").append(crystal);
       
 }
