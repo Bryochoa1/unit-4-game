@@ -131,7 +131,7 @@ body {
     border-bottom-color: #00a9ff;
     border-left-color: #00a9ff;}
 
-/*768px*/
+
 
 @media (max-width: 768px) {
 
@@ -153,7 +153,7 @@ body {
 
 }
 
-/*640px*/
+
 
 @media (max-width: 640px) {
 
@@ -169,7 +169,6 @@ body {
     }
 }
 
-/*375px*/
 
 @media (max-width: 375px) {
 
