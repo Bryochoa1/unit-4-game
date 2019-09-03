@@ -11,20 +11,63 @@
 var randomResult;
 var lose;
 var win;
-
-random_result = Math.floor(Math.random()* 69) + 30;
-$("#result").html('Random Results: ' + random_result);
+var last = 0;
 
 
-for (let i = 0; i < 4; i++) {
+var resetAndOverAgain = function () {
 
-    var random = Math.floor(Math.random()* 11) + 1;
-    var crystal = $("<div>");
+    random_result = Math.floor(Math.random() * 69) + 30;
+
+    $(".crystal").emtpy();
+
+    $("#result").html('Random Results: ' + random_result);
+
+    for (let i = 0; i < 4; i++) {
+
+        var random = Math.floor(Math.random() * 11) + 1;
+        
+        var crystal = $("<div>");
         crystal.attr({
             "class": 'crystal',
             "data-random": random
         });
 
-    $(".crystals").append(crystal);
-      
+        crystal.html();
+
+        $(".crystals").append(crystal);
+
+    }
+
 }
+
+resetAndOverAgain();
+
+$(".crystal").on('click', function () {
+
+    var num = parseInt($(this).attr('data-random'));
+
+    last += num;
+
+    console.log(last);
+
+
+    if (last > random_result) {
+
+        lost--;
+
+        $("#lost").html(lost);
+        resetAndOverAgain();
+
+    } else if (last === random_result) {
+
+        win++;
+
+        $("#win").html(win);
+
+        resetAndOverAgain();
+
+    }
+
+
+
+})
